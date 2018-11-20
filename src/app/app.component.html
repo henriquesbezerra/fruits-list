@@ -1,28 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <img src="assets/fruits-brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Fruits List
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="assets/fruits-brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      {{title}}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Home</a>
+        </li>     
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Another Link</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Others Links</a>
+        </li>          
+      </ul>
+      <div class="navbar-right">        
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown d-none d-lg-block">
+              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Sign In</a>              
+                <a class="dropdown-item" href="#">Sign Up</a>                            
+              </div>
+          </li>   
+          <li class="d-lg-none">
+              <a class="nav-link">Sign In</a>           
+          </li>  
+          <li class="d-lg-none">
+              <a class="nav-link">Sign up</a>           
+          </li>        
+        </ul>
+      </div>
+    </div>    
   </div>
+  
 </nav>
-<div class="container">
+<main>  
   <router-outlet></router-outlet>
-</div>
+</main>
+
+<app-delivery-banner></app-delivery-banner>
+<app-fruits-footer></app-fruits-footer>

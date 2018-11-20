@@ -1,0 +1,11 @@
+.fruits-banner{   
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+}
+
+@media(min-width:576px){
+    .fruits-banner{               
+        text-align: left;                        
+    }
+}

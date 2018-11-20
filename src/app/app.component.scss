@@ -1,0 +1,12 @@
+#navbarNav{
+    justify-content: space-between;
+}
+.navbar-right{
+    display: flex;
+    flex-direction: column;
+}
+@media(min-width:1024px){
+    .navbar-right{
+      flex-direction: row;
+    }
+}
