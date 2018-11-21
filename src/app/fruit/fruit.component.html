@@ -1,0 +1,22 @@
+<app-fruits-banner></app-fruits-banner>
+
+<section class="container">
+    <div class="row fruits-list">
+        <div class="col-12 col-md-12">
+            <h3 class="fruits-list--title">Products List</h3>
+        </div>
+        <div class="col-12 col-md-12 fruits-col">
+            <div class="card" *ngFor='let fruta of frutas'>
+                <a routerLink="/fruit/{{fruta.name}}">
+                    <img class="card-img-top" src="assets/fruits/{{fruta.name}}.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{fruta.name | uppercase}}</h5>
+                        <p class="card-price">R$ {{fruta.price | number : '1.2-2'}}</p>               
+                        <p class="card-stock">Estock: {{fruta.amount}}</p>
+                        <span><i class="fas fa-shopping-cart"></i> BUY</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

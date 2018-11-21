@@ -1,0 +1,105 @@
+.fruits-footer {
+    background-color: #3a3f46;
+    color: white;
+
+    .info{   
+        color: #afb0b1;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        line-height: 1.7;
+    }
+
+    h5 {
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+
+    .logo{
+        margin-top: 10px;
+        small{
+            font-size: 13px; 
+            line-height: 28px;
+        }
+    }
+
+
+    .second-bar{
+        .logo{
+            a{
+                color:white;
+                font-size: 28px;
+                float: left;
+                font-weight: bold;
+                line-height: 68px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    } 
+
+    a {
+        color: #d2d1d1;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: none;
+        color: white;
+    }
+
+    .second-bar {
+        text-align: center;
+        background-color: #33373e;
+        text-align: center;
+        display: flex;
+    }
+
+    .second-bar{
+        a {
+            font-size: 22px;
+            color: #9fa3a9;
+            padding: 10px;
+            transition: 0.2s;
+            line-height: 68px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    } 
+    .social-icons {    
+        margin: 0 auto;
+        display: inline-block;
+        @media(min-width: 425px){
+            float:right;
+        }
+    }
+
+    .github:hover .fab{
+        color: #fff;
+    }
+
+    .linkedin:hover .fab {
+        color: #0077e2;
+    }
+
+    .google:hover .fab {
+        color: #f95151;
+    }
+  
+
+    @media screen and (max-width: 767px) {
+        text-align: center; 
+
+        .info{
+            text-align: center;
+        }
+    }
+
+}
