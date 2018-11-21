@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import { Fruit } from '../fruit/Fruit.class';
 import { FruitService } from '../services/fruit.service';
-
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fruit-detail',
@@ -13,9 +13,8 @@ import { FruitService } from '../services/fruit.service';
 })
 export class FruitDetailComponent implements OnInit {
 
-  fruta: Fruit; 
-  
-  estoque: number;
+  public fruta: Fruit;
+  public estoque: number;
   public total: number = 0.00;
   public qtd_selected: number = 0;
   public qtd_cart: number = 0;
@@ -42,7 +41,7 @@ export class FruitDetailComponent implements OnInit {
 
   getFruitByName(): void{
     const name = this.route.snapshot.paramMap.get('name');
-    this.fruitService.getFruitByName(name).subscribe(fruta => this.fruta = fruta);
+    this.fruitService.getFruitByName(name).subscribe(fruta => this.fruta = fruta);           
   }
 
   goBack(): void{

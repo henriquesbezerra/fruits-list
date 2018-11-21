@@ -31,6 +31,6 @@ export class FruitComponent implements OnInit {
 
   
   getFruits(): void{    
-    this.fruitService.getFruits().subscribe(frutas => this.frutas = frutas)
+    this.fruitService.getFruits().subscribe(frutas => this.frutas = frutas)   
   }
 }
