@@ -1,8 +1,46 @@
 <section class="container fruit-detail">
     <div class="row">
-        <div class="col-12">
-            {{fruta.name}}
-            <button (click)="goBack()">Back</button>
-        </div>
+        <div class="col-12">  
+            <div class="fruit-detail--wrapper border rounded">
+                <div class="fruit-detail--thumbnail">
+                    <img class="rounded-left" src="assets/fruits/{{fruta.name}}.jpg" alt="">          
+                </div>
+                <div class="fruit-detail--content">
+                    <h1 class="fruit-detail--title">{{fruta.name | uppercase}}</h1>
+                    <p class="fruit-detail--price">R$ {{fruta.price | number : '1.2-2'}}</p>
+                    <p class="fruit-detail--stock">Estock: {{estoque}}</p>
+                    <form>
+                        <div class="form-group"> 
+                            <div class="fruit-detail--add_removeItens">
+                                <button type="button" class="btn btn-outline-danger" [disabled]="qtd_selected==0" (click)="removeItem()">
+                                    <i class="far fa-minus-square"></i>
+                                </button>           
+                                
+                                <span class="qtd_selected">{{qtd_selected}}</span>
+                                <!-- <input type="number" readonly [(ngModel)]="qtd_selected" name="ops"> -->
+
+                                <button type="button" class="btn btn-outline-success" [disabled]="qtd_selected==fruta.amount" (click)="addItem()">
+                                    <i class="far fa-plus-square"></i>
+                                </button>
+                            </div>                                   
+                            
+                            <input type="hidden" [value]="qtd_selected" name="qtd_selected">
+                            <input type="hidden" [value]="total" name="total">
+                        
+                            <div>
+                                <p class="total-price--label">Total</p>
+                                <p class="total-price--price">R$ {{total | number : '1.2-2'}}</p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                    </form>                    
+                    
+                </div>
+            </div>
+            <button class="btn btn-outline-info" (click)="goBack()">Back</button>
+        </div>               
     </div>
 </section>

@@ -13,7 +13,12 @@ import { FruitService } from '../services/fruit.service';
 })
 export class FruitDetailComponent implements OnInit {
 
-  fruta: Fruit;
+  fruta: Fruit; 
+  
+  estoque: number;
+  public total: number = 0.00;
+  public qtd_selected: number = 0;
+  public qtd_cart: number = 0;
   
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +28,7 @@ export class FruitDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getFruitByName();
+    this.estoque = this.fruta.amount;
   }
 
   getFruitByName(): void{
@@ -33,4 +39,26 @@ export class FruitDetailComponent implements OnInit {
   goBack(): void{
     this.location.back();
   }
+  
+  addItem(): void{
+    if(this.estoque > 0){
+      this.qtd_selected++;
+      this.qtd_cart++;
+      this.estoque--;      
+      this.total = this.calcTotal(this.qtd_selected,this.fruta.price);   
+    }    
+  }
+  removeItem(): void{
+    if(this.estoque < this.fruta.amount){
+      this.qtd_selected--;
+      this.qtd_cart--;
+      this.estoque++;   
+      this.total = this.calcTotal(this.qtd_selected,this.fruta.price);   
+    }
+  }
+  
+  calcTotal(qtd : number, price : number): number{
+    return qtd*price;
+  }
+
 }
